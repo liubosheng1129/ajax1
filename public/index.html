@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ajax</title>
+
+    <!-- 
+    这里原本可以直接引入 CSS：
+    <link rel="stylesheet" href="/style.css">
+
+    但这个项目为了练习 AJAX，
+    所以先注释掉，让用户点击“请求 CSS”按钮后再动态加载 CSS。
+  -->
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+  </head>
+
+  <body>
+    <!-- 页面标题 -->
+    <h1>AJAX Hello <span id="myName"></span></h1>
+
+    <!-- 
+    六个按钮：
+    每个按钮都有 id
+    main.js 会通过这些 id 绑定点击事件
+  -->
+    <p>
+      <button id="getCSS">请求 CSS</button>
+      <button id="getJS">请求 JS</button>
+      <button id="getHTML">请求 HTML</button>
+      <button id="getXML">请求XML</button>
+      <button id="getJSON">请求JSON</button>
+      <button id="getPage">请求下一页</button>
+    </p>
+
+    <div>
+      {{page1}}
+      <!-- 
+      这个 {{page1}} 是占位符
+      server.js 会读取 page1.json
+      然后把它替换成 <ul><li>...</li></ul>-->
+    </div>
+
+    <!-- 引入前端主逻辑 JS -->
+    <script src="/main.js"></script>
+  </body>
+</html>
