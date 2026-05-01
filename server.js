@@ -99,6 +99,19 @@ var parsedUrl = url.parse(request.url, true)
   // ==========================
   // 3. 处理 /style.css 或 /2.css
   // ==========================
+  } else if (path === '/main1.js') {
+    response.statusCode = 200
+
+    // 告诉浏览器：返回的是 JavaScript
+    response.setHeader('Content-Type', 'text/javascript;charset=utf-8')
+
+    // 读取并返回 public/main.js
+    response.write(fs.readFileSync('public/main.js'))
+    response.end()
+
+  // ==========================
+  // 3. 处理 /style.css 或 /2.css
+  // ==========================
   } else if (path === '/style.css' || path === '/2.css') {
     response.statusCode = 200
 
